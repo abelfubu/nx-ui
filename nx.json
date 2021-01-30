@@ -17,6 +17,8 @@
   },
   "projects": {
     "antdesign": { "tags": [] },
-    "antdesign-e2e": { "tags": [], "implicitDependencies": ["antdesign"] }
+    "antdesign-e2e": { "tags": [], "implicitDependencies": ["antdesign"] },
+    "ng-zorro": { "tags": [] },
+    "ui-ng-zorro": { "tags": [] }
   }
 }

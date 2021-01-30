@@ -49,9 +49,14 @@
             "aot": true,
             "assets": [
               "apps/antdesign/src/favicon.ico",
-              "apps/antdesign/src/assets"
+              "apps/antdesign/src/assets",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
+                "output": "/assets/"
+              }
             ],
-            "styles": ["apps/antdesign/src/styles.scss"],
+            "styles": ["apps/antdesign/src/theme.less", "apps/antdesign/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -104,10 +109,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/antdesign/src/**/*.ts",
-              "apps/antdesign/src/**/*.html"
-            ]
+            "lintFilePatterns": ["apps/antdesign/src/**/*.ts", "apps/antdesign/src/**/*.html"]
           }
         },
         "test": {
@@ -142,6 +144,50 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["apps/antdesign-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "ng-zorro": {
+      "projectType": "library",
+      "root": "libs/ng-zorro",
+      "sourceRoot": "libs/ng-zorro/src",
+      "prefix": "nx-ui",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/ng-zorro/src/**/*.ts", "libs/ng-zorro/src/**/*.html"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ng-zorro"],
+          "options": {
+            "jestConfig": "libs/ng-zorro/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "ui-ng-zorro": {
+      "projectType": "library",
+      "root": "libs/ui-ng-zorro",
+      "sourceRoot": "libs/ui-ng-zorro/src",
+      "prefix": "nx-ui",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/ui-ng-zorro/src/**/*.ts", "libs/ui-ng-zorro/src/**/*.html"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ui-ng-zorro"],
+          "options": {
+            "jestConfig": "libs/ui-ng-zorro/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }

@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@ng-zorro": ["libs/ng-zorro/src/index.ts"],
+      "@ui/ng-zorro": ["libs/ui-ng-zorro/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
